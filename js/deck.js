@@ -10,12 +10,21 @@ for (const suit of suits) {
   }
 }
 
-// 2. Loop for special face cards (Fixed ChatGPT's bug here)
+// 2. Loop for special face cards
 for (const suit of suits) {
   for (const rank of specialRanks) {
     deck.push(new Card(rank, suit)); // Changed specialRanks to rank
   }
 }
 
-console.log(deck); // Your full 52-card deck lives here!
-export { deck };
+// Shuffle array function (Fisher-Yates Standard)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+console.log(deck);
+export { deck, shuffle };
