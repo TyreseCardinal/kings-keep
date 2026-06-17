@@ -1,6 +1,3 @@
-// Import the tools from card.js
-import { Card, suits, ranks, specialRanks } from "./card.js";
-
 const deck = [];
 
 // 1. Loop for standard numbered cards
@@ -18,13 +15,10 @@ for (const suit of suits) {
 }
 
 // Shuffle array function (Fisher-Yates Standard)
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
+function shuffle(deck) {
+  for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    [deck[i], deck[j]] = [deck[j], deck[i]];
   }
-  return array;
+  return deck;
 }
-
-console.log(deck);
-export { deck, shuffle };

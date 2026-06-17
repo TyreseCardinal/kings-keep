@@ -7,6 +7,3 @@ function Card(rank, suit) {
   this.rank = rank;
   this.suit = suit;
 }
-
-// Export everything so deck.js can access them
-export { Card, suits, ranks, specialRanks };
